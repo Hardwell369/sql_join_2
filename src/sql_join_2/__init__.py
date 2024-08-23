@@ -44,7 +44,7 @@ SELECT * FROM sql1 JOIN sql2 USING (date, instrument)
 def run(
     sql1: I.port("sql 1，SQL 1", specific_type_name="DataSource"),
     sql2: I.port("sql 2，SQL 2", specific_type_name="DataSource"),
-    sql_join: I.code("因子与标注合并SQL", default=SQL_JOIN, auto_complete_type="sql") = SQL_JOIN,
+    sql_join: I.code("合并SQL", default=SQL_JOIN, auto_complete_type="sql") = SQL_JOIN,
 ) -> [I.port("数据", "data")]:
     """DAI 合并SQL。"""
     import dai
