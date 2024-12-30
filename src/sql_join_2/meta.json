@@ -1,0 +1,62 @@
+{
+  "name": "sql_join_2",
+  "version": 9999,
+  "owner": "bigquant",
+  "shared": true,
+  "data": {
+    "source_code": "",
+    "source_deps": "",
+    "cacheable": true,
+    "opensource": false,
+    "serviceversion": 9999,
+    "friendly_name": "SQL合并 2",
+    "category": "数据处理",
+    "arguments": "(sql1=, sql2=, sql_join='WITH\\nsql1 AS (\\n    {sql1}\\n),\\nsql2 AS (\\n    {sql2}\\n)\\n\\nSELECT * FROM sql1 JOIN sql2 USING (date, instrument)\\n')",
+    "doc": "DAI 合并SQL。",
+    "doc_url": "https://bigquant.com/wiki/",
+    "interface": [
+      {
+        "type_name": null,
+        "desc": "数据",
+        "specific_type_name": null,
+        "name": "data",
+        "optional": false,
+        "type": "通用",
+        "type_code": "output_port"
+      },
+      {
+        "type_name": null,
+        "desc": "sql 1，SQL 1",
+        "specific_type_name": "DataSource",
+        "name": "sql1",
+        "optional": false,
+        "type": "通用",
+        "type_code": "input_port"
+      },
+      {
+        "type_name": null,
+        "desc": "sql 2，SQL 2",
+        "specific_type_name": "DataSource",
+        "name": "sql2",
+        "optional": false,
+        "type": "通用",
+        "type_code": "input_port"
+      },
+      {
+        "type_name": "Script",
+        "desc": "合并SQL",
+        "specific_type_name": null,
+        "language": "",
+        "default": "WITH\nsql1 AS (\n    {sql1}\n),\nsql2 AS (\n    {sql2}\n)\n\nSELECT * FROM sql1 JOIN sql2 USING (date, instrument)\n",
+        "auto_complete_type": "sql",
+        "optional": true,
+        "type_code": "code",
+        "name": "sql_join"
+      }
+    ],
+    "visible": true,
+    "created_by": "biglearning"
+  },
+  "rank": 0,
+  "keep_source": false
+}
