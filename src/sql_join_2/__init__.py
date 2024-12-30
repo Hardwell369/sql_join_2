@@ -53,7 +53,8 @@ def run(
     join_sql = sql_join.format(sql1=sql_statements_1.pop(), sql2=sql_statements_2.pop())
     join_sql = ";\n".join(list(set(sql_statements_1 + sql_statements_2))) + ";\n" + join_sql
 
-    data = dai.DataSource.write_text(join_sql)
+    # data = dai.DataSource.write_text(join_sql)
+    data = dai.DataSource.write_json({"sql": join_sql})
     return I.Outputs(data=data)
 
 
